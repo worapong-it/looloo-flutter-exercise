@@ -11,6 +11,7 @@ class LoginButton extends StatelessWidget {
         width: 250,
         height: 45,
         decoration: BoxDecoration(
+          // color: Theme.of(context).disabledColor,
           color: Theme.of(context).primaryColor,
         ),
         child: TextButton(
@@ -20,6 +21,7 @@ class LoginButton extends StatelessWidget {
             style: TextStyle(
               color: Colors.white,
               fontSize: 25,
+              fontWeight: FontWeight.w400,
             ),
           ),
         ),
