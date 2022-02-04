@@ -3,6 +3,7 @@ import 'flutter_logo_with_text.dart';
 import 'login_text_field.dart';
 import 'login_button.dart';
 import '../main.dart';
+import '../custom_drawer.dart';
 
 // class MyAppEx1 extends StatelessWidget {
 //   const MyAppEx1({Key? key}) : super(key: key);
@@ -31,6 +32,7 @@ class MyLoginPage extends StatelessWidget {
           },
         ),
       ),
+      drawer: CustomDrawer(),
       body: Center(
         child: Column(children: [
           Expanded(flex: 1, child: Container()),
