@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'flutter_logo_with_text.dart';
 import 'login_text_field.dart';
 import 'login_button.dart';
-import '../main.dart';
 import '../custom_drawer.dart';
 
 // class MyAppEx1 extends StatelessWidget {
@@ -18,19 +17,13 @@ import '../custom_drawer.dart';
 // }
 
 class MyLoginPage extends StatelessWidget {
-  MyLoginPage({Key? key}) : super(key: key);
+  const MyLoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Login Pagea'),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_forward),
-          onPressed: () {
-            Navigator.pushNamed(context, '/second');
-          },
-        ),
       ),
       drawer: CustomDrawer(),
       body: Center(

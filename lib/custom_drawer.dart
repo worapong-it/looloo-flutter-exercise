@@ -19,22 +19,30 @@ class CustomDrawer extends StatelessWidget {
             ),
             child: Text('Looloo Excercise List'),
           ),
-          ListTile(
-            title: const Text('Ex 01 - Login Page'),
-            onTap: () {
-              // Update the state of the app.
-              // ...
-            },
-          ),
-          ListTile(
-            title: const Text('Ex 02 - Colorful Icon Grid'),
-            onTap: () {
-              // Update the state of the app.
-              // ...
-            },
-          ),
+          NavListTile(text: 'Ex 01 - Login Page', routeName: '/first'),
+          NavListTile(text: 'Ex 02 - Colorful Icon Grid', routeName: '/second'),
+          NavListTile(text: 'Ex 03 - xxx', routeName: '/third'),
+          NavListTile(text: 'Ex 04 - yyy', routeName: '/forth'),
         ],
       ),
+    );
+  }
+}
+
+// --- NavListTile - Clickable to navigate --- //
+
+class NavListTile extends StatelessWidget {
+  final text, routeName;
+  const NavListTile({Key? key, @required this.text, @required this.routeName})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Text(text),
+      onTap: () {
+        Navigator.pushNamed(context, routeName);
+      },
     );
   }
 }
