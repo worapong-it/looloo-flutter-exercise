@@ -28,8 +28,8 @@ class CustomDrawer extends StatelessWidget {
           ),
           NavListTile(text: 'Ex 01 - Login Page', routeName: '/first'),
           NavListTile(text: 'Ex 02 - Colorful Icon Grid', routeName: '/second'),
-          NavListTile(text: 'Ex 03 - xxx', routeName: '/third'),
-          NavListTile(text: 'Ex 04 - yyy', routeName: '/forth'),
+          NavListTile(text: 'Ex 03 - Natasha\'s Profile', routeName: '/third'),
+          NavListTile(text: 'Ex 04 - KBank Account', routeName: '/forth'),
         ],
       ),
     );
