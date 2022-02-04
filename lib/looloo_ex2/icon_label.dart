@@ -1,5 +1,10 @@
 import 'package:flutter/foundation.dart';
 
-class IconLabel {
-  String icon_label = 'Icon Label';
+class IconLabel with ChangeNotifier {
+  String label = 'Icon Label';
+
+  void changeLabel(String label) {
+    this.label = label;
+    notifyListeners();
+  }
 }

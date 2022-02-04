@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'dart:math';
+
+import 'icon_label.dart';
 
 class CardWidget extends StatefulWidget {
   final IconData icon;
@@ -14,6 +17,9 @@ class CardWidget extends StatefulWidget {
 class _CardWidgetState extends State<CardWidget> {
   bool _isToggled = false;
   void _toggle() {
+    var iconLabel = context.read<IconLabel>(); /*  */
+    iconLabel.changeLabel(widget.label); /*  */
+
     setState(() {
       _isToggled = !_isToggled;
     });
