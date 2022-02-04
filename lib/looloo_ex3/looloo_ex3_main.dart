@@ -27,13 +27,17 @@ class _MyThirdPageState extends State<MyThirdPage> {
     Widget _body = Center(
       child: Column(
         children: [
-          Text('Network image here...'),
           SizedBox(height: 20),
-          Text('This is body. xxx'),
+          CircleAvatar(
+            radius: 45,
+            backgroundImage: NetworkImage(
+                'https://i.pinimg.com/474x/ae/20/a5/ae20a5deae372ffbfb0df18a9e441dad.jpg'),
+          ),
           SizedBox(height: 20),
-          // CircularProgressIndicator(),
+          Text('Natasha'),
           SizedBox(height: 20),
-          Text(randomNumber.toString()),
+          Text('Follow: ' + randomNumber.toString()),
+          SizedBox(height: 20),
         ],
       ),
     );
