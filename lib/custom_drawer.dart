@@ -13,11 +13,18 @@ class CustomDrawer extends StatelessWidget {
         // Important: Remove any padding from the ListView.
         padding: EdgeInsets.zero,
         children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(
-              color: Colors.blue,
+          Container(
+            height: 80,
+            child: const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              child: Text('Looloo Excercise List',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  )),
             ),
-            child: Text('Looloo Excercise List'),
           ),
           NavListTile(text: 'Ex 01 - Login Page', routeName: '/first'),
           NavListTile(text: 'Ex 02 - Colorful Icon Grid', routeName: '/second'),
