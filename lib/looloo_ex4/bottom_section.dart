@@ -38,7 +38,7 @@ class _ButomSectionState extends State<ButomSection> {
     return Column(
       children: [
         // Text('*ขั้นต่ำ 100 บาท'),
-        Text(withdrawController.text),
+        Text('${withdrawController.text} [valid: $_isMoreThan100]'),
         SizedBox(height: 10),
         // MoneyTextField(),
         _myTextField,
