@@ -17,16 +17,17 @@ class MyThirdPage extends StatelessWidget {
 
     Future<int> getRandomNumber() {
       return Future.delayed(
+        // Duration(milliseconds: 200),
         Duration(seconds: 1),
         () => Random().nextInt(50000),
       );
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Looloo - Exercise3'),
-      ),
-      drawer: CustomDrawer(),
+      // appBar: AppBar(
+      //   title: Text('Looloo - Exercise3'),
+      // ),
+      // drawer: CustomDrawer(),
       body: FutureBuilder(
         future: getRandomNumber(),
         builder: (context, snapshot) {

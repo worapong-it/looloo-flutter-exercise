@@ -55,12 +55,23 @@ class ColumnLabelWithNumber extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text(label,
-            style: TextStyle(color: Colors.pink, fontWeight: FontWeight.bold)),
+        Text(
+          label,
+          style: TextStyle(
+            color: Colors.pink,
+            fontWeight: FontWeight.bold,
+            fontSize: 17,
+          ),
+        ),
         SizedBox(height: 10),
-        Text(number,
-            style:
-                TextStyle(color: Colors.pink, fontWeight: FontWeight.normal)),
+        Text(
+          number,
+          style: TextStyle(
+            color: Colors.pink,
+            fontWeight: FontWeight.normal,
+            fontSize: 17,
+          ),
+        ),
       ],
     );
   }
