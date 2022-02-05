@@ -22,13 +22,13 @@ class MyForthPage extends StatelessWidget {
           Center(
             child: Column(
               children: [
-                // SizedBox(height: 50),
-                // MyPageTitle(title: 'ถอนเงิน'),
-                // SizedBox(height: 15),
-                // BalanceDisplay(),
-                // SizedBox(height: 15),
-                // AccountDisplay(),
-                // SizedBox(height: 15),
+                SizedBox(height: 50),
+                MyPageTitle(title: 'ถอนเงิน'),
+                SizedBox(height: 15),
+                BalanceDisplay(),
+                SizedBox(height: 15),
+                AccountDisplay(),
+                SizedBox(height: 15),
                 ButomSection(),
               ],
             ),
