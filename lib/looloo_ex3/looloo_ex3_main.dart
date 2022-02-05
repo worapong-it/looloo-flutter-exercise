@@ -1,56 +1,24 @@
 import 'package:flutter/material.dart';
-// import 'package:provider/provider.dart';
-import '../custom_drawer.dart';
 import 'dart:math';
+import '../custom_drawer.dart';
+import 'build_body.dart';
+// import 'dart:html';
 
-class MyThirdPage extends StatefulWidget {
+class MyThirdPage extends StatelessWidget {
   const MyThirdPage({Key? key}) : super(key: key);
 
   @override
-  State<MyThirdPage> createState() => _MyThirdPageState();
-}
-
-class _MyThirdPageState extends State<MyThirdPage> {
-  int randomNumber = 0;
-  bool _isFinished = false;
-
-  Future func() async {
-    randomNumber = await getRandomNumber();
-    _isFinished = true;
-    setState(() {});
-  }
-
-  @override
   Widget build(BuildContext context) {
-    // final int randomNumber = await getRandomNumber();
-    // func();
-    Widget _body = Center(
-      child: Column(
-        children: [
-          SizedBox(height: 20),
-          CircleAvatar(
-            radius: 45,
-            backgroundImage: NetworkImage(
-                'https://i.pinimg.com/474x/ae/20/a5/ae20a5deae372ffbfb0df18a9e441dad.jpg'),
-          ),
-          SizedBox(height: 20),
-          Text('Natasha'),
-          SizedBox(height: 20),
-          Text('Follow: ' + randomNumber.toString()),
-          SizedBox(height: 20),
-        ],
-      ),
-    );
+    final String fName = 'Natasha';
+    final String imgLink =
+        'https://i.pinimg.com/474x/ae/20/a5/ae20a5deae372ffbfb0df18a9e441dad.jpg';
 
-    /* call async function here */
-    if (!_isFinished) {
-      func();
-      _body = Center(
-        child: LimitedBox(
-          maxHeight: 50,
-          maxWidth: 50,
-          child: CircularProgressIndicator(),
-        ),
+    int follow = 0;
+
+    Future<int> getRandomNumber() {
+      return Future.delayed(
+        Duration(seconds: 1),
+        () => Random().nextInt(50000),
       );
     }
 
@@ -59,14 +27,28 @@ class _MyThirdPageState extends State<MyThirdPage> {
         title: Text('Looloo - Exercise3'),
       ),
       drawer: CustomDrawer(),
-      body: _body,
-    );
-  }
-
-  Future<int> getRandomNumber() {
-    return Future.delayed(
-      Duration(seconds: 2),
-      () => Random().nextInt(50000),
+      body: FutureBuilder(
+        future: getRandomNumber(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            if (snapshot.hasError) {
+              return Center(
+                child: Text(
+                  '${snapshot.error} occured',
+                  style: TextStyle(fontSize: 18),
+                ),
+              );
+            } else if (snapshot.hasData) {
+              follow = snapshot.data as int;
+              return buildBody(fName: fName, imgLink: imgLink, follow: follow);
+            }
+          }
+          return Center(child: CircularProgressIndicator());
+        },
+      ),
     );
   }
 }
+
+
+// buildBody(fName: fName, imgLink: imgLink,follow: follow)
